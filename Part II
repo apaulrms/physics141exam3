@@ -1,0 +1,29 @@
+from numpy import pi,cos,sin,array
+from matplotlib.pyplot import *
+from scipy import optimize
+
+N=100
+a=100
+Kn=[]
+for n in range(N):
+    Kn.append(2*pi*n/(100*a))
+e=0.5
+E_1=[]
+k=[0]
+i=0
+def f(k):
+    return cos(k)+sin(k)/k-cos(Kna)
+for i in range(N):
+    Kna=Kn[i]*a
+    root=optimize.newton(f,e)
+    e=root
+    E_1.append(root**2)
+    i+=1
+
+Kn=array(Kn)
+KnA=Kn*a
+
+plot(KnA,E_1,'red')
+xlabel('$K_n$ (in unit $1/a$)')
+ylabel('E1 (in unit $\hbar^2/(2ma^2)$')
+show()
